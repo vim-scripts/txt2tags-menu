@@ -4,8 +4,8 @@
 "   Description:    vim script to support txt2tags
 "        Author:    Otávio Corrêa Cordeiro
 "         Email:    otavio (at)  geek42 (dot) org
-"          Date:    29 - Dezember, 2004
-"       Version:    0.3
+"          Date:    16 - March, 2005
+"       Version:    0.4
 "
 "------------------------------------------------------------------------------------------
 "    Copyright:  Copyright (C) 2004 Otávio Corrêa Cordeiro
@@ -82,6 +82,11 @@ vmenu &txt2tags.Section                                di=  =<Esc><Left>Pla
 amenu &txt2tags.SubSection                             <Esc><Esc>a==  ==<Esc><Left><Left>i
 imenu &txt2tags.SubSection                             <Esc><Esc>a==  ==<Esc><Left><Left>i
 vmenu &txt2tags.SubSection                             di==  ==<Esc><Left><Left>Pla
+
+amenu &txt2tags.SubSubSection                          <Esc><Esc>a===  ===<Esc><Left><Left>i
+imenu &txt2tags.SubSubSection                          <Esc><Esc>a===  ===<Esc><Left><Left>i
+vmenu &txt2tags.SubSubSection                          di===  ===<Esc><Left><Left>Pla
+
 
 amenu &txt2tags.-SEP2-                                 :
 
