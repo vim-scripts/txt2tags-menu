@@ -1,10 +1,11 @@
+"------------------------------------------------------------------------------------------
 "
 "      Filename:    t2t.vim
-"   Description:    vim script to support txt2tag
+"   Description:    vim script to support txt2tags
 "        Author:    Otávio Corrêa Cordeiro
-"         Email:    cordeiro@exatas.unisinos.br
-"          Date:    06 - October, 2004
-"       Version:    0.2
+"         Email:    otavio (at)  geek42 (dot) org
+"          Date:    29 - Dezember, 2004
+"       Version:    0.3
 "
 "------------------------------------------------------------------------------------------
 "    Copyright:  Copyright (C) 2004 Otávio Corrêa Cordeiro
@@ -26,21 +27,58 @@
 
 amenu &txt2tags.Header                                 <Esc><Esc>aTitle<CR>Author<CR>%%date(%m/%d/%Y)<CR>
 
-"amenu &txt2tags.Settings.Target
-"amenu &txt2tags.Settings.Options(target)
+amenu &txt2tags.Settings.Target.html                   <Esc><Esc>a%!target: html<CR>
+imenu &txt2tags.Settings.Target.html                   <Esc><Esc>a%!target: html<CR>
+amenu &txt2tags.Settings.Target.xhtml                  <Esc><Esc>a%!target: xhtml<CR>
+imenu &txt2tags.Settings.Target.xhtml                  <Esc><Esc>a%!target: xhtml<CR>
+amenu &txt2tags.Settings.Target.tex                    <Esc><Esc>a%!target: tex<CR>
+imenu &txt2tags.Settings.Target.tex                    <Esc><Esc>a%!target: tex<CR>
+amenu &txt2tags.Settings.Target.man                    <Esc><Esc>a%!target: man<CR>
+imenu &txt2tags.Settings.Target.man                    <Esc><Esc>a%!target: man<CR>
+amenu &txt2tags.Settings.Target.mgp                    <Esc><Esc>a%!target: mgp<CR>
+imenu &txt2tags.Settings.Target.mgp                    <Esc><Esc>a%!target: mgp<CR>
+amenu &txt2tags.Settings.Target.sgml                   <Esc><Esc>a%!target: sgml<CR>
+imenu &txt2tags.Settings.Target.sgml                   <Esc><Esc>a%!target: sgml<CR>
+
+amenu &txt2tags.Settings.Options.add                   <Esc><Esc>a%!options(target): <CR>
+imenu &txt2tags.Settings.Options.add                   <Esc><Esc>a%!options(target): <CR>
+amenu &txt2tags.Settings.Options.html                  <Esc><Esc>a%!options(html): --toc --style foo.css --toc-level N<CR>
+imenu &txt2tags.Settings.Options.html                  <Esc><Esc>a%!options(html): --toc --style foo.css --toc-level N<CR>
+amenu &txt2tags.Settings.Options.sgml                  <Esc><Esc>a%!options(sgml): --toc --toc-level N<CR>
+imenu &txt2tags.Settings.Options.sgml                  <Esc><Esc>a%!options(sgml): --toc --toc-level N<CR>
+amenu &txt2tags.Settings.Options.txt                   <Esc><Esc>a%!options(txt): --toc --toc-level N<CR>
+imenu &txt2tags.Settings.Options.txt                   <Esc><Esc>a%!options(txt): --toc --toc-level N<CR>
+amenu &txt2tags.Settings.Options.tex                   <Esc><Esc>a%!options(tex): --toc --enum-title<CR>
+imenu &txt2tags.Settings.Options.tex                   <Esc><Esc>a%!options(tex): --toc --enum-title<CR>
+
 "amenu &txt2tags.Settings.Include
-"amenu &txt2tags.Settings.Style
+
+amenu &txt2tags.Settings.Style.add                     <Esc><Esc>a%!style: <CR>
+imenu &txt2tags.Settings.Style.add                     <Esc><Esc>a%!style: <CR>
+amenu &txt2tags.Settings.Style.tex                     <Esc><Esc>a%!style(tex): <CR>
+imenu &txt2tags.Settings.Style.tex                     <Esc><Esc>a%!style(tex): <CR>
+amenu &txt2tags.Settings.Style.html                    <Esc><Esc>a%!style(html): <CR>
+imenu &txt2tags.Settings.Style.html                    <Esc><Esc>a%!style(html): <CR>
+
 amenu &txt2tags.Settings.Encoding\ (iso-8859-1)        <Esc><Esc>a%!encoding: iso-8859-1<CR>
 imenu &txt2tags.Settings.Encoding\ (iso-8859-1)        <Esc><Esc>a%!encoding: iso-8859-1<CR>
+amenu &txt2tags.Settings.Encoding\ (utf-8)             <Esc><Esc>a%!encoding: utf-8<CR>
+imenu &txt2tags.Settings.Encoding\ (utf-8)             <Esc><Esc>a%!encoding: utf-8<CR>
+
 "amenu &txt2tags.Settings.IncludeConf
 "amenu &txt2tags.Settings.GuiColors
-"amenu &txt2tags.Settings.ProProc
+
+amenu &txt2tags.Settings.ProProc                       <Esc><Esc>a%!proproc: <CR>
+imenu &txt2tags.Settings.ProProc                       <Esc><Esc>a%!proproc: <CR>
+amenu &txt2tags.Settings.PostProc                      <Esc><Esc>a%!postproc: <CR>
+imenu &txt2tags.Settings.PostProc                      <Esc><Esc>a%!postproc: <CR>
 
 amenu &txt2tags.-SEP1-                                 :
 
 amenu &txt2tags.Section                                <Esc><Esc>a=  =<Esc><Left>i
 imenu &txt2tags.Section                                <Esc><Esc>a=  =<Esc><Left>i
 vmenu &txt2tags.Section                                di=  =<Esc><Left>Pla
+
 amenu &txt2tags.SubSection                             <Esc><Esc>a==  ==<Esc><Left><Left>i
 imenu &txt2tags.SubSection                             <Esc><Esc>a==  ==<Esc><Left><Left>i
 vmenu &txt2tags.SubSection                             di==  ==<Esc><Left><Left>Pla
@@ -84,3 +122,7 @@ amenu &txt2tags.-SEP5-                                 :
 
 amenu &txt2tags.Comments                               <Esc><Esc>a% 
 imenu &txt2tags.Comments                               <Esc><Esc>a% 
+
+amenu &txt2tags.-SEP666-                               :
+
+amenu &txt2tags.About                                  :echo "\ngVIM-menu for txt2tags (http://txt2tags.sourceforge.net/)\nby Otávio Corrêa Cordeiro <otavio(at)geek42(dot)org>\n"<Cr>
