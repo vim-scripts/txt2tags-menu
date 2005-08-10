@@ -5,7 +5,7 @@
 "        Author:    Otávio Corrêa Cordeiro
 "         Email:    otavio (at)  geek42 (dot) org
 "          Date:    16 - March, 2005
-"       Version:    0.4
+"       Version:    0.5
 "
 "------------------------------------------------------------------------------------------
 "    Copyright:  Copyright (C) 2004 Otávio Corrêa Cordeiro
@@ -68,8 +68,8 @@ imenu &txt2tags.Settings.Encoding\ (utf-8)             <Esc><Esc>a%!encoding: ut
 "amenu &txt2tags.Settings.IncludeConf
 "amenu &txt2tags.Settings.GuiColors
 
-amenu &txt2tags.Settings.ProProc                       <Esc><Esc>a%!proproc: <CR>
-imenu &txt2tags.Settings.ProProc                       <Esc><Esc>a%!proproc: <CR>
+amenu &txt2tags.Settings.PreProc                       <Esc><Esc>a%!preproc: <CR>
+imenu &txt2tags.Settings.PreProc                       <Esc><Esc>a%!preproc: <CR>
 amenu &txt2tags.Settings.PostProc                      <Esc><Esc>a%!postproc: <CR>
 imenu &txt2tags.Settings.PostProc                      <Esc><Esc>a%!postproc: <CR>
 
